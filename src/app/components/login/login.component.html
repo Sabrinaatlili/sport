@@ -1,0 +1,44 @@
+
+
+<div class="hero overlay" style="background-image: url('/assets/images/bg_3.jpg');">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 mx-auto text-center">
+          <h1 class="text-white">Login</h1>
+                 </div>
+      </div>
+    </div>
+  </div>
+ 
+    <div class="container" style="margin-top:50px">
+      <div class="row"> 
+        <div class="col-lg-12">
+          <form action="#" #loginForm="ngForm"  (ngSubmit)="logIn()">
+            <div class="form-group">
+              <input type="email" class="form-control" name="a"  [(ngModel)]="user.email" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" name="b"  [(ngModel)]="user.pwd"  placeholder=" Password">
+            </div>
+            
+           
+            <div class="form-group col-lg-12">
+              <input type="submit" class="btn btn-primary py-3 px-5" value="LOGIN">
+            </div>
+          </form>  
+          <div class="text-center">
+            <span style="color: red">
+              {{errorMsg}}
+            </span>
+          </div>
+         
+        </div>
+        <div class="col-lg-4 ml-auto">
+          
+        
+        </div>
+      </div>
+    </div>
+
+
+

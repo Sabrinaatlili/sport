@@ -1,0 +1,32 @@
+<table class="table text-dark">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Team ID</th>
+        <th scope="col">Team Name</th>
+        <th scope="col">Team Fondation</th>
+        <th scope="col">Team Owner</th>
+        <!-- <th scope="col">Stadium name</th>
+        <th scope="col">Stadium country</th>
+        <th scope="col">Stadium capacity</th> -->
+
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody class="table table-white" *ngFor="let t of teams">
+      <tr >
+        <td scope="row">{{t._id}}</td>
+        <td >{{t.teamName}}</td>
+        <td>{{t.teamFondation}}</td>
+         <td>{{t.teamOwner}}</td>
+         <!-- <td >{{t.stadium.name}}</td>
+        <td>{{t.stadium.country}}</td>
+         <td>{{t.stadium.capaciry}}</td> -->
+        <td>
+            <button type="button" class="btn btn-success" (click)="goToEdit(t._id)">Edit</button>
+            <button type="button" class="btn btn-danger" (click)="goToDelete(t._id)">Delete</button>
+            <button type="button" class="btn btn-warning" (click)="goToDisplay(t._id)">Display</button>
+        </td>
+      </tr>
+     
+    </tbody>
+  </table>

@@ -1,0 +1,50 @@
+
+
+<div class="hero overlay" style="background-image: url('/assets/images/bg_3.jpg');">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 mx-auto text-center">
+          <h1 class="text-white"> Search </h1>
+                 </div>
+      </div>
+    </div>
+  </div>
+ 
+    <div class="container" style="margin-top:50px">
+      <div class="row"> 
+        <div class="col-lg-12">
+          <form action="#" [formGroup]="searchWeatherForm" >
+            <div class="form-group">
+              City : <input type="text" class="form-control" name="a"  formControlName="city" placeholder="City">
+            </div>
+            <div *ngIf="searchWeatherForm.controls['city'].invalid && 
+            (searchWeatherForm.controls['city'].touched || searchWeatherForm.controls['city'].dirty)">
+            <div *ngIf="searchWeatherForm.controls['city'].errors?.['required'] "> 
+              City  is required
+            </div>
+                        
+        </div>
+           
+            <div class="form-group col-lg-12">
+              <input type="submit" class="btn btn-primary py-3 px-5" (click)="search()" value="Search">
+            </div>
+          </form>  
+        </div>
+
+        <div>
+          <p> Temperature : {{weatherResult.temperature}} </p>
+          <p> Pressure : {{weatherResult.pressure}} </p>
+          <p> Humidity : {{weatherResult.humidity}} </p>
+          <p> Win Speed : {{weatherResult.windspeed}} </p>
+          <img [src]="weatherResult.icone" alt="">
+        </div>
+        <div class="col-lg-4 ml-auto">
+          
+        
+        </div>
+      </div>
+    </div>
+
+
+
+

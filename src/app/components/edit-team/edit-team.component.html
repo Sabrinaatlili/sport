@@ -1,0 +1,71 @@
+
+<div class="hero overlay" style="background-image: url('/assets/images/bg_3.jpg');">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 mx-auto text-center">
+          <h1 class="text-white">Edit Team</h1>
+                 </div>
+      </div>
+    </div>
+  </div>
+ 
+    <div class="container" style="margin-top:50px">
+      <div class="row"> 
+        <div class="col-lg-12">
+          <!-- Start Form -->
+          <form action="#" #editTeamForm="ngForm" (ngSubmit) ="editTeam()" >
+
+            <div class="form-group">
+              <input type="text" class="form-control" name="a" [(ngModel)]="team.teamName" placeholder="Team Name">
+            </div>
+            <!-- Controle de saisie Team Name
+            <div *ngIf="addTeamForm.controls['teamName'].invalid 
+                  && (addTeamForm.controls['teamName'].touched || addTeamForm.controls['teamName'].dirty)">
+              <div *ngIf="addTeamForm.controls['teamName'].errors?.['required']">  Team Name is required  </div>
+              <div *ngIf="addTeamForm.controls['teamName'].errors?.['maxlength']">  Team Name must be have at most 20 chars  </div>
+         
+            </div> -->
+            <div class="form-group">
+              <input type="text" class="form-control" name="b" [(ngModel)]="team.teamFondation"  placeholder="Team fondation">
+            </div>
+            <!-- Controle de saisie Team Fondations -->
+            <!-- <div *ngIf="addTeamForm.controls['teamFondation'].invalid 
+                  && (addTeamForm.controls['teamFondation'].touched || addTeamForm.controls['teamFondation'].dirty)">
+              <div *ngIf="addTeamForm.controls['teamFondation'].errors?.['required']">  Team Fondation is required  </div>
+              <div *ngIf="addTeamForm.controls['teamFondation'].errors?.['maxlength']">  Team Fondation must be have at most 20 chars  </div>
+         
+            </div> -->
+            <div class="form-group">
+                <input type="text" class="form-control" name="c" [(ngModel)]="team.teamStadivons" placeholder="Team Stadivons">
+              </div>
+              <!-- Controle de saisie Team Stadivons -->
+              <!-- <div *ngIf="addTeamForm.controls['teamStadivons'].invalid 
+                  && (addTeamForm.controls['teamStadivons'].touched || addTeamForm.controls['teamStadivons'].dirty)">
+              <div *ngIf="addTeamForm.controls['teamStadivons'].errors?.['required']">  Team Stadivons is required  </div>
+              <div *ngIf="addTeamForm.controls['teamStadivons'].errors?.['maxlength']">  Team Stadivons must be have at most 20 chars  </div>
+         
+            </div> -->
+              <div class="form-group">
+                <input type="text" class="form-control" name="d" [(ngModel)]="team.teamOwner" placeholder="Team owner">
+              </div>
+              <!-- Controle de saisie Team Owner -->
+              <!-- <div *ngIf="addTeamForm.controls['teamOwner'].invalid 
+              && (addTeamForm.controls['teamOwner'].touched || addTeamForm.controls['teamOwner'].dirty)">
+          <div *ngIf="addTeamForm.controls['teamOwner'].errors?.['required']">  Team owner is required  </div>
+          <div *ngIf="addTeamForm.controls['teamOwner'].errors?.['maxlength']">  Team owner must be have at most 20 chars  </div>
+     
+        </div> -->
+            <div class="form-group col-lg-12">
+              <input type="submit" class="btn btn-primary py-3 px-5" value="EDIT TEAM" (click)="editTeam()">
+            </div>
+          </form>  
+          <span style="color: red;">{{errorMsg}}</span>
+     
+          <!-- End Form -->
+        </div>
+        
+      </div>
+    </div>
+
+
+

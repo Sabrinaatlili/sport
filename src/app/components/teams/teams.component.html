@@ -1,0 +1,22 @@
+
+
+<div class="hero overlay" style="background-image: url('/assets/images/bg_3.jpg');">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 mx-auto text-center">
+          <h1 class="text-white"> TEAMS </h1>
+          </div>
+          
+      </div>
+    </div>
+  </div>
+<!-- *ngFor ="let m o matches"  :::> c'est un boucle graphique -->
+<div class="container site-section" *ngFor="let t of teams"> 
+ 
+    <app-single-team [teamInput]="t" (newTeams)="updateTeams($event)"></app-single-team>
+  </div>
+ 
+
+ 
+  
+ 

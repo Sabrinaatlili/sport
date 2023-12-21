@@ -1,0 +1,113 @@
+
+
+<div class="hero overlay" style="background-image: url('/assets/images/bg_3.jpg');">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 mx-auto text-center">
+          <h1 class="text-white">Sign Up</h1>
+                 </div>
+      </div>
+    </div>
+  </div>
+ 
+    <div class="container" style="margin-top:50px">
+      <div class="row"> 
+        <div class="col-lg-12">
+          <form action="#" [formGroup]="signupForm"  >
+            <!-- Test de saisie via les Validators -->
+            <div class="form-group">
+                <input type="text" class="form-control" name="a" formControlName="firstName" placeholder="First Name">
+              </div>
+              
+              <!--  Test First Name -->
+              <div *ngIf="signupForm.controls['firstName'].invalid && 
+                    (signupForm.controls['firstName'].touched || signupForm.controls['firstName'].dirty)">
+                    <div *ngIf="signupForm.controls['firstName'].errors?.['required'] "> 
+                         First Name is required
+                    </div>
+                    <div *ngIf="signupForm.controls['firstName'].errors?.['minlength'] "> 
+                         First Name must be have at least 5 chars
+                    </div>
+                </div>
+              
+              <div class="form-group">
+                <input type="text" class="form-control" name="b" formControlName="lastName" placeholder=" Last Name">
+              </div>
+              <!--  Test Last Name -->
+              <div *ngIf="signupForm.controls['lastName'].invalid && 
+                    (signupForm.controls['lastName'].touched || signupForm.controls['lastName'].dirty)">
+                    <div *ngIf="signupForm.controls['lastName'].errors?.['required'] "> 
+                        Last Name is required
+                    </div>
+                    <div *ngIf="signupForm.controls['lastName'].errors?.['minlength'] "> 
+                        Last Name must be have at least 3 chars
+                    </div>
+                </div>
+              
+            <div class="form-group">
+              <input type="email" class="form-control" name="c" formControlName="email"   placeholder="Email">
+            </div>
+            <!--  Test Email -->
+            <div *ngIf="signupForm.controls['email'].invalid && 
+                    (signupForm.controls['email'].touched || signupForm.controls['email'].dirty)">
+                    <div *ngIf="signupForm.controls['email'].errors?.['required'] "> 
+                        Email  is required
+                    </div>
+                    <div *ngIf="signupForm.controls['email'].errors?.['minlength'] "> 
+                        Last Name must be have at least 3 chars
+                    </div>
+                </div>
+            
+            <div class="form-group">
+              <input type="password" class="form-control" name="d" formControlName="pwd" (keyup)="matchPwd()" placeholder=" Password">
+            </div>
+            <!--  Test Password -->
+            <div *ngIf="signupForm.controls['pwd'].invalid && 
+                    (signupForm.controls['pwd'].touched || signupForm.controls['pwd'].dirty)">
+                    <div *ngIf="signupForm.controls['pwd'].errors?.['required'] "> 
+                      Password  is required
+                    </div>
+                    <div *ngIf="signupForm.controls['pwd'].errors?.['minlength'] "> 
+                      Password must be have at least 8 chars
+                    </div>
+                    
+                </div>
+
+                <div class="form-group">
+                  <input type="password" class="form-control"  name="e" formControlName="confirmpwd" (keyup)="matchPwd()"  placeholder=" Confirm Password">
+                </div>
+                <!--  Test Confirm Password -->
+               
+                <div *ngIf="!test">
+                  Confirm Password does not match with password.
+                  </div>
+                
+                  <div class="form-group" style="visibility: hidden;">
+                    <input type="file" class="form-control" #filePicker (change)="onImageSelected($event)">
+                  </div>
+                  <div class="text-center">
+                    <button class="btn btn-success" (click)="filePicker.click()" > Select Your Avatar</button>
+
+                  </div>
+                  <div class="text-center" style="margin-top: 20px;">
+                    <img [src]="imagePreview" alt="" width="200px" height="200px">
+                  </div>
+              
+                
+           
+            <div class="form-group col-lg-12">
+              <input type="submit" class="btn btn-primary py-3 px-5" value="SIGN UP" (click)="signup()">
+            </div>
+
+          </form>  
+        </div>
+        <div class="col-lg-4 ml-auto">
+          
+        
+        </div>
+      </div>
+    </div>
+
+
+
+

@@ -1,0 +1,48 @@
+
+<div class="hero overlay" style="background-image: url('/assets/images/bg_3.jpg');">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-5 mx-auto text-center">
+        <h1 class="text-white">Add Team</h1>
+               </div>
+    </div>
+  </div>
+</div>
+
+  <div class="container" style="margin-top:50px">
+    <div class="row"> 
+      <div class="col-lg-12">
+        <!-- Start form -->
+          <form action="#"  #addTeamForm="ngForm" (ngSubmit) ="addTeam()">
+
+            <div class="form-group">
+              <input type="text" class="form-control" name="a"[(ngModel)]="team.teamName" placeholder="Team name">
+            </div>
+            
+            <div class="form-group">
+              <input type="number" class="form-control" name="b" [(ngModel)]="team.teamFondation"  placeholder="Fondation">
+            </div>
+            
+             <div class="form-group">
+                <input type="text" class="form-control" name="d" [(ngModel)]="team.teamOwner" placeholder="team Owner">
+              </div>
+              <div class="form-group">
+                <select name="" id="" class="form-control" (change)="selectStadium($event)">
+                  <option value="" > Select your Stadium</option>
+                  <option [value]="s._id" *ngFor="let s of stadiums" style="color: black;"> {{s.name}} : {{s.country}} </option>
+
+                </select>
+                  </div>
+            <div class="form-group col-lg-12">
+              <input type="submit" class="btn btn-primary py-3 px-5" value="ADD TEAM" >
+            </div>
+          </form>  
+        <!-- End form -->
+      </div>
+      <div class="col-lg-4 ml-auto">
+        
+      
+      </div>
+    </div>
+  </div>
+
